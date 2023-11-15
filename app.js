@@ -11,51 +11,54 @@ server.headersTimeout = 120 * 1000;
 
 const html = `
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Hello from Render!</title>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-    <script>
-      setTimeout(() => {
-        confetti({
-          particleCount: 100,
-          spread: 70,
-          origin: { y: 0.6 },
-          disableForReducedMotion: true
-        });
-      }, 500);
-    </script>
-    <style>
-      @import url("https://p.typekit.net/p.css?s=1&k=vnd5zic&ht=tk&f=39475.39476.39477.39478.39479.39480.39481.39482&a=18673890&app=typekit&e=css");
-      @font-face {
-        font-family: "neo-sans";
-        src: url("https://use.typekit.net/af/00ac0a/00000000000000003b9b2033/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"), url("https://use.typekit.net/af/00ac0a/00000000000000003b9b2033/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"), url("https://use.typekit.net/af/00ac0a/00000000000000003b9b2033/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("opentype");
-        font-style: normal;
-        font-weight: 700;
-      }
-      html {
-        font-family: neo-sans;
-        font-weight: 700;
-        font-size: calc(62rem / 16);
-      }
-      body {
-        background: white;
-      }
-      section {
-        border-radius: 1em;
-        padding: 1em;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        margin-right: -50%;
-        transform: translate(-50%, -50%);
-      }
-    </style>
-  </head>
-  <body>
-    <section>
-      Hello from Render!
-    </section>
-  </body>
+<html lang="ru">
+<head>
+  <link rel="stylesheet" href="Styles/MainStyle.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CHUKKA</title>
+</head>
+<body>
+  <header>
+    <div class="header-block">
+      <div class="logo-block"><p class="logo">chukka</p></div>
+      <div class="categories-block">
+        <div class="categories"><p>Man</p></div>
+        <div class="categories"><p>Women</p></div>
+        <div class="categories"><p>Kids</p></div>
+        <div class="categories"><p>Sale</p></div>
+        <div class="categories"><p>New</p></div>
+      </div>
+      <div class="func-btn">
+        <img src="icons/lens.png">
+        <img src="icons/profile.png">
+        <img src="icons/bag.png">
+      </div>
+    </div>
+    <div class="header-info">
+      
+    </div>
+    <div class="scroll-block"><img src="icons/scroll-wheel.png"></div>
+  </header>
+  <div class="new-sale-block">
+
+  </div>
+  <div class="types-block">
+    <div class="types-block-item"></div>
+    <div class="types-block-item"></div>
+    <div class="types-block-item"></div>
+  </div>
+  <div class="about-block">
+    <div class="ab-photo"></div>
+    <div class="ab-info"></div>
+  </div>
+  
+  <div class="footer-preview">
+    <p>chukka</p>
+  </div>
+  <footer>
+
+  </footer>
+</body>
 </html>
 `
