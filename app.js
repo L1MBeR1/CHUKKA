@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 3001;
 
+app.use(express.static(path.join(__dirname, "public")));
+
 app.get("/", (req, res) => res.type('html').send(html));
 
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
@@ -13,7 +15,7 @@ const html = `
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <link rel="stylesheet" href="Styles/MainStyles.css">
+  <link rel="stylesheet" href="/Styles/MainStyles.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CHUKKA</title>
