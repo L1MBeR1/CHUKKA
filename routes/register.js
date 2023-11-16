@@ -10,3 +10,4 @@ router.use(bodyParser.urlencoded({ extended: true }));
 router.get('/', (req, res) => {
   res.render('register');
 });
+module.exports = router;
