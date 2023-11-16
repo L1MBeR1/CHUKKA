@@ -7,7 +7,8 @@ const port = process.env.PORT || 3001;
 
 app.use(express.static(path.join(__dirname, "public")));
 
-
+app.use('/', homeRouter);
+app.use('/catalog', catalogRouter);
 
 const server = app.listen(port, () => console.log(`Example app listening on port ${port}!`));
 
