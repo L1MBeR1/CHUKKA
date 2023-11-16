@@ -15,7 +15,7 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 // Маршруты
 const homeRoute = require('./routes/home');
-const registerRoute = require('./register');
+const registerRoute = require('./routes/register');
 
 app.use('/', homeRoute);
 app.use('/register', registerRoute);
