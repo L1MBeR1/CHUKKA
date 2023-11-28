@@ -134,8 +134,8 @@ function populateTable(data) {
 
   // Очищаем тело таблицы перед добавлением новых данных
   tbody.innerHTML = '';
-  // const hiddenColumns = ['id_user','id_discounted_shoes','id_shoe','id_sale','id_size','id_brand'];
-  const hiddenColumns =[''];
+  const hiddenColumns = ['id_user','id_discounted_shoes','id_shoe','id_sale','id_size','id_brand','id_order','id_review','id_bucket_row'];
+  // const hiddenColumns =[''];
   // Если есть хотя бы одна запись данных
   if (data.length > 0) {
     const headersRow = tbody.insertRow();
