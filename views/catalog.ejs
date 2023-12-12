@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/styles/admin.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог chukka
+  </title>
+</head>
+
+<body>
+  <span class="header">
+    <a href="/">
+      <div class="logo">chukka</div>
+    </a>
+    <div class="exit">
+      <img src="/icons/logout.png" alt="Выйти из аккаунта">
+    </div>
+  </span>
+  <div class="mainSpace">
+    <div class="menu">
+      <div class="menuItem" id="shoe">
+        <p>Обувь</p>
+      </div>
+      <div class="menuItem" id="discounted_shoes">
+        <p>Обувь со скидкой</p>
+      </div>
+      <div class="menuItem" id="bestsellers_shoes">
+        <p>Бестселлеры</p>
+      </div>
+      <div class="menuItem" id="new_shoes">
+        <p>Новая обувь</p>
+      </div>
+      <div class="menuItem" id="highrated_shoes">
+        <p>Высокооценённая обувь</p>
+      </div>
+      <div class="menuItem" id="brand">
+        <p>Бренды</p>
+      </div>
+      <div class="menuItem" id="user_order">
+        <p>Мои заказы</p>
+      </div>
+
+      <div class="menuItem" id="bucket_row">
+        <p>Корзина</p>
+      </div>
+    </div>
+    <div class="actionSpace">
+      <div class="informationContainer">
+        <div>
+          <h1></h1>
+        </div>
+        <div class="rowConmtainer">
+          <div class="buttonContainer">
+            <div class="edit" onclick="buy()"><img src="/icons/buy.png"></div>
+            <div class="edit" onclick="editBucket()"><img src="/icons/edit.png"></div>
+            <div class="remove" onclick="removeBucket()"><img src="/icons/remove.png"></div>
+
+          </div>
+          <div class="tableContainer">
+            <table id="data-table">
+
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="informationContainer">
+        <div>
+          <h1></h1>
+        </div>
+        <div class="rowConmtainer">
+          
+          <div class="tableContainer">
+            <table id="data-table">
+
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="messageContainer">
+        <div></div>
+      </div>
+    </div>
+    <div class="Window shoeWindow">
+      <div class="WindowCcontent shoeWindow-content">
+        <h1>Карточка обуви</h1>
+        <div class="item">
+          <p>Название модели</p>
+          <input type="text" id="name" name="name" disabled>
+        </div>
+        <div class="item">
+          <p>Тип обуви</p>
+          <input type="text" id="type" name="type" disabled>
+        </div>
+        <div class="item">
+          <p>Бренд</p>
+          <input type="text" id="brand" name="brand" disabled>
+        </div>
+        <div class="item">
+          <p>Дата поставки</p>
+          <input type="date" id="date" name="date" required disabled>
+        </div>
+        <div class="item">
+          <p>Описание модели</p>
+          <input type="text" id="description" name="description" disabled>
+        </div>
+        <div class="item">
+          <p>Цена</p>
+          <input type="number" id="cost" name="cost" disabled>
+        </div>
+        <div class="item">
+          <p>Цена со скидкой</p>
+          <input type="number" id="Salecost" name="Salecost"disabled>
+        </div>
+        <div class="item">
+          <p>Оценка</p>
+          <input type="number" id="rating" name="rating" min="1" max="5" step="0.5"disabled>
+        </div>
+        <div class="item">
+          <p>Пол</p>
+          <input type="text" id="gender" name="gender" disabled>
+        </div>
+        <div class="item">
+          <p>Детские</p>
+          <input type="text" id="childrens" name="childrens" disabled>
+        </div>
+        <div class="item">
+          <p>Цвет</p>
+          <input type="text" id="color" name="color"disabled>
+        </div>
+        <h1>Отзывы</h1>
+        <div class="item con" id="reviewsContainer">
+          <table id="ReviewsTable">
+
+          </table>
+          <div class="buttons">
+            <button class="OpenAddReview">Добавить отзыв</button>
+          </div>
+          
+        </div>
+
+        <div class="item con" id="addReviewContainer">
+          <h1>Добавление отзыва</h1>
+          <div class="item">
+            <p>Текст</p>
+            <input type="text" id="Reviewtext" name="Reviewtext">
+          </div>
+          <div class="item">
+            <p>Оценка</p>
+            <input type="range" id="Reviewrating" name="Reviewrating" min="1" max="5" step="0.5" value="4" oninput="showRatingValue(this)">
+            <span id="ratingValue">4</span>
+
+          </div>
+          <div class="buttons">
+          <button class="AddReview">Принять</button>
+        </div>
+        </div>
+
+        <h1>Размеры</h1>
+        <div class="item" id="sizesContainer">
+
+        </div>
+        <h1>Количество пар</h1>
+        <div class="item">
+          <input type="number" id="amount" name="amount" value="1">
+        </div>
+        <div class="buttons">
+          <button class="add">Добавить в корзину</button>
+          <button class="back">Назад</button>
+        </div>
+      </div>
+
+    </div>
+    <div class="Window DateWindow">
+      <div class="WindowCcontent DateWindow-content">
+        <h1>Введите данные</h1>
+        <div class="item">
+          <p>Начальная дата</p>
+          <input type="date" id="start_date" name="start_date">
+        </div>
+        <div class="item">
+          <p>Конечная дата</p>
+          <input type="date" id="end_date" name="end_date">
+        </div>
+        <div class="buttons">
+          <button class="DateSubmit">Подвердить</button>
+          <button class="DateClose">Назад</button>
+        </div>
+      </div>
+    </div>
+    <div class="Window editBucketWindow">
+      <div class="WindowCcontent editBucketWindow-content">
+        <h1>Изменение строки корзины</h1>
+        <div class="item">
+          <p>Количество пар</p>
+          <input type="number" id="amount" name="amount" value="1">
+        </div>
+
+        <div class="buttons">
+          <button class="editBucketSubmit">Подвердить</button>
+          <button class="editBucketClose">Назад</button>
+        </div>
+      </div>
+    </div>
+    <div class="Window buyWindow">
+      <div class="WindowCcontent buyWindow-content">
+        <h1>Создание заказа</h1>
+        <div class="item">
+          <p>Выбранные товары</p>
+          <table id="buyTable">
+
+          </table>
+        </div>
+        <div class="item">
+          <p>Стоимость заказа</p>
+          <input type="number" id="cost" name="cost" value="0" disabled>
+        </div>
+        <h1>Данные для заказа</h1>
+        <div class="item">
+          <p>Тип доставки</p>
+          <select id="delivery_method" name="delivery_method" required>
+            <option value="Стандарт">Стандарт</option>
+            <option value="Экспресс">Экспресс</option>
+          </select>
+        </div>
+        <div class="item">
+          <p>Адресс</p>
+          <input type="text" id="adress" name="adress" value="" maxlength="150"required>
+        </div>
+        <div class="buttons">
+          <button class="buySubmit">Подвердить</button>
+          <button class="buyClose">Назад</button>
+        </div>
+      </div>
+    </div>
+    <div class="Window BucketRowlistWindow">
+      <div class="WindowCcontent BucketRowlistWindow-content">
+        <h1>Товары заказа</h1>
+        <div class="item">
+          <table id="OrderTable">
+  
+          </table>
+        </div>
+        <div class="buttons">
+          <button class="BucketRowlistClose">Закрыть</button>
+        </div>
+  
+      </div>
+    </div>
+    <script src="/scripts/catalogScript.js"></script>
+</body>
+
+</html>

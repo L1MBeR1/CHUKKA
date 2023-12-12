@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles/register.css">
+  <link rel="stylesheet" href="/styles/header.css">
+  <title>Регистрация аккаунта</title>
+</head>
+<body>
+  <div class="main-header">
+    <a href="/"><div class="logo">
+        chukka
+    </div>
+    </a>
+    <div class="icons">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M23.6736 20.7495L18.9998 16.0766C18.7889 15.8656 18.5029 15.7485 18.2029 15.7485H17.4388C18.7326 14.0939 19.5014 12.0129 19.5014 9.74905C19.5014 4.36364 15.137 0 9.75071 0C4.36438 0 0 4.36364 0 9.74905C0 15.1345 4.36438 19.4981 9.75071 19.4981C12.0149 19.4981 14.0963 18.7294 15.7512 17.4358V18.1998C15.7512 18.4998 15.8683 18.7857 16.0793 18.9966L20.7531 23.6696C21.1937 24.1101 21.9063 24.1101 22.3423 23.6696L23.6689 22.3431C24.1096 21.9025 24.1096 21.1901 23.6736 20.7495ZM9.75071 15.7485C6.43641 15.7485 3.75027 13.0675 3.75027 9.74905C3.75027 6.43531 6.43172 3.74963 9.75071 3.74963C13.065 3.74963 15.7512 6.43062 15.7512 9.74905C15.7512 13.0628 13.0697 15.7485 9.75071 15.7485Z" fill="black"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M18.8571 7.5V6C18.8571 2.69156 15.781 0 12 0C8.21893 0 5.14286 2.69156 5.14286 6V7.5H0V20.25C0 22.3211 1.91877 24 4.28571 24H19.7143C22.0812 24 24 22.3211 24 20.25V7.5H18.8571ZM8.57143 6C8.57143 4.34578 10.1095 3 12 3C13.8905 3 15.4286 4.34578 15.4286 6V7.5H8.57143V6ZM17.1429 11.625C16.4328 11.625 15.8571 11.1213 15.8571 10.5C15.8571 9.87867 16.4328 9.375 17.1429 9.375C17.8529 9.375 18.4286 9.87867 18.4286 10.5C18.4286 11.1213 17.8529 11.625 17.1429 11.625ZM6.85714 11.625C6.14705 11.625 5.57143 11.1213 5.57143 10.5C5.57143 9.87867 6.14705 9.375 6.85714 9.375C7.56723 9.375 8.14286 9.87867 8.14286 10.5C8.14286 11.1213 7.56723 11.625 6.85714 11.625Z" fill="black"/>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" viewBox="0 0 25 24" fill="none">
+            <path d="M12.5 12C16.4453 12 19.6429 9.31406 19.6429 6C19.6429 2.68594 16.4453 0 12.5 0C8.55469 0 5.35714 2.68594 5.35714 6C5.35714 9.31406 8.55469 12 12.5 12ZM17.5 13.5H16.5681C15.3292 13.9781 13.9509 14.25 12.5 14.25C11.0491 14.25 9.67634 13.9781 8.43192 13.5H7.5C3.35937 13.5 0 16.3219 0 19.8V21.75C0 22.9922 1.19978 24 2.67857 24H22.3214C23.8002 24 25 22.9922 25 21.75V19.8C25 16.3219 21.6406 13.5 17.5 13.5Z" fill="black"/>
+        </svg>
+    
+    </div>
+</div>
+<div class="mainSpace">
+
+  <div class="registerContainer">
+    <div class="mainLabel"><p>Регистрация</p></div>
+    <form id="registrationForm" action="/register" method="POST">
+      <div class="item">
+        <input type="text" id="name" name="name" placeholder="Имя">
+      </div>
+
+      <div class="item">
+        <input type="text" id="surname" name="surname" placeholder="Фамилия" >
+      </div>
+      <div class="item">
+        <input type="text" id="patronymic" name="patronymic" placeholder="Отчество">
+      </div>
+      <div class="item">
+        <select id="gender" name="gender">
+          <option value="" disabled selected>Пол</option>
+          <option value="Мужской">Мужской</option>
+          <option value="Женский">Женский</option>
+        </select>
+      </div>
+      <div class="item">
+        <input type="number" id="phoneNumber" name="phoneNumber" placeholder="Телефон">
+      </div>
+
+      <div class="item">
+        <input type="email" id="email" name="email" placeholder="Почта*" required>
+      </div>
+      <div class="item">
+        <input type="text" id="login" name="login" placeholder="Логин*" required>
+      </div >
+      <div class="item">
+        <input type="password" id="password" name="password" placeholder="Пароль*" required>
+      </div>
+      <div class="mes"><p><%- registrationMessage %></p></div>
+      <button type="submit">Зарегистрироваться</button>
+      <div class="login">
+        <div><p>Уже имеете аккаунт?  </p></div>
+        <div><a href="/login">Войти в аккаунт</a></div>
+      </div>
+    </form>
+  </div>
+  <!-- <div class="helpContainer">
+    <div><p>Поля с * обезательны для заполнения</p></div>
+    <div><p>Уже имеете аккаунт?</p></div>
+  </div>
+</div> -->
+</body>
+</html>
